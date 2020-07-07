@@ -423,9 +423,7 @@ h1, h3, a, span  {
         padding: 18px 12px;
         width: 43px;
         height: 30px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        display: block;
         position: relative;
     }
     .menu__item-list-open {
@@ -451,6 +449,10 @@ h1, h3, a, span  {
         width: 37px;
         height: 3px;
         background: #000;
+    }
+
+    .menu__item:nth-child(1) {
+        margin-top: 0;
     }
 
     .menu__item:nth-child(2) {
