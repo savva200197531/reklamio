@@ -453,6 +453,14 @@ h1, h3, a, span  {
         background: #000;
     }
 
+    .menu__item:nth-child(1) {
+        margin-bottom: 27px;
+    }
+
+    .menu__item:nth-child(3) {
+        margin-top: 27px;
+    }
+
     .modal-window {
         /*top: 300px;*/
         height: 100%;
