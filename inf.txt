@@ -2,5 +2,5 @@ https://shtork-69c19aa8.localhost.run/
 
 YYE
 
-https://api.telegram.org/bot1194986262:AAEAqsSlrgANQM0Yrde0mDZ7WQc3TUUiywI/setWebhook?url=https://samogruz.herokuapp.com/
+https://api.telegram.org/bot1285297750:AAFOmpJ1XjA6exg6mlSYOS4bF4UpHXUYQIU/setWebhook?url=https://samogruz.herokuapp.com/
 1194986262:AAEAqsSlrgANQM0Yrde0mDZ7WQc3TUUiywI
