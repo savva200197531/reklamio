@@ -36,7 +36,7 @@ h1, h3, a, span  {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -47,7 +47,6 @@ h1, h3, a, span  {
 
 .website {
     position: relative;
-    /*background: url('../assets/img/background-hand.jpg') no-repeat center center;*/
     width: 50%;
     height: 100%;
 }
@@ -59,29 +58,17 @@ h1, h3, a, span  {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../assets/img/background-hand.jpg') no-repeat center center;
+    background: url('../assets/img/background-hand.jpg') center center;
+    background-size: cover;
     z-index: -1;
 }
 
 .blur.website::before {
-    /*filter: blur(3px);*/
-    background: url('../assets/img/background-hand-blur.jpg') no-repeat center center;
-}
-
-.blur.advertising__title-link {
-    letter-spacing: 1px;
-}
-
-.blur.website__title-link {
-    letter-spacing: 1px;
-}
-
-.website:hover {
-    /*cursor: pointer;*/
+    background: url('../assets/img/background-hand-blur.jpg')center center;
+    background-size: cover;
 }
 
 .advertising {
-    /*background: url('../assets/img/background-fruit.jpg') no-repeat center center;*/
     width: 50%;
     height: 100%;
     position: relative;
@@ -94,17 +81,14 @@ h1, h3, a, span  {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../assets/img/background-fruit.jpg') no-repeat center center;
+    background: url('../assets/img/background-fruit.jpg')no-repeat center center;
+    background-size: cover;
     z-index: -1;
 }
 
 .blur.advertising::before {
-    /*filter: blur(3px);*/
-    background: url('../assets/img/background-fruit-blur.jpg') no-repeat center center;
-}
-
-.advertising:hover {
-    /*cursor: pointer;*/
+    background: url('../assets/img/background-fruit-blur.jpg')no-repeat center center;
+    background-size: cover;
 }
 
 .website__header, .advertising__header {
@@ -118,15 +102,17 @@ h1, h3, a, span  {
     display: block;
 }
 
-.website__title, .advertising__title {
-    text-align: center;
+.website__header-hidden {
+    display: none;
 }
 
 .website__title, .advertising__title  {
     font-size: 48px;
-    margin-top: 340px;
+    display: block;
+    text-align: center;
     white-space: nowrap;
     cursor: pointer;
+    margin-top: 340px;
 }
 
 .advertising__header a {
@@ -171,7 +157,7 @@ h1, h3, a, span  {
 
 .menu-wrapper {
     position: absolute;
-    bottom: 17px;
+    bottom: 0;
     left: calc(50% - 91px/2);
     z-index: 200;
 }
@@ -280,14 +266,22 @@ h1, h3, a, span  {
     z-index: 1;
 }
 
-.modal-background {
-    background: url('../assets/img/backrgound-full.jpg') no-repeat center center;
+.website-modal {
+    background: url('../assets/img/background-hand-blur.jpg') center center;
+    background-size: cover;
     height: 100%;
-    width: 100%;
+    width: 50%;
+}
+
+.advertising-modal {
+    background: url('../assets/img/background-fruit-blur.jpg')center center;
+    background-size: cover;
+    height: 100%;
+    width: 50%;
 }
 
 .modal__title {
-    margin-top: 300px;
+    margin-top: 245px;
 }
 
 .modal__title span {
@@ -297,23 +291,28 @@ h1, h3, a, span  {
 
 .modal__phone {
     margin-top: 55px;
+    position: relative;
 }
 
-.modal__phone span:before {
-    position: absolute;
+.modal__phone label {
     content: '';
+    position: absolute;
     width: 300px;
     height: 1px;
-    background: #fff;
-    left: -44px;
+    left: calc(50% - 150px);
     bottom: -3px;
-    opacity: 1;
+    background: #fff;
 }
 
-.modal__phone span {
-    position: relative;
+.modal__phone-input {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
     font-size: 24px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+    border: 1px transparent;
 }
 
 .modal__button {
@@ -332,7 +331,7 @@ h1, h3, a, span  {
 }
 
 .modal__header {
-    max-width: 1440px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -344,15 +343,165 @@ h1, h3, a, span  {
     width: 50%;
 }
 
-/*some js classes*/
+@media (max-width: 850px) {
+    .main-wrapper {
+        height: 668px;
+    }
 
-/*.modal-blur {*/
-/*    filter: blur(3px);*/
-/*}*/
+    .container {
+        flex-direction: column;
+        max-width: 375px;
+        height: 100%;
+    }
+
+    .website {
+        width: 100%;
+    }
+
+    .advertising {
+        width: 100%;
+    }
+
+    .website__header-hidden {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 20px 0 20px;
+    }
+
+    .website__header-hidden a {
+        font-size: 14px;
+        position: relative;
+    }
+
+    .website__header-hidden a:before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        max-width: 198px;
+        width: 100%;
+        background: #fff;
+        bottom: -3px;
+    }
+
+    .website__header {
+        display: flex;
+        justify-content: space-between;
+        margin: 14px 20px 0 20px;
+    }
 
 
 
-/*@media (max-width: ) {*/
-/*    */
-/*}*/
+    .website__title, .advertising__title  {
+        font-size: 24px;
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .website__title {
+        margin-top: 130px;
+    }
+
+    .advertising__title {
+        margin-top: 155px;
+    }
+
+    .advertising__header {
+        display: none;
+    }
+
+    .website__header, .advertising__header {
+        display: none;
+    }
+
+    .menu-wrapper {
+        left: calc(50% - 67px/2);
+    }
+
+    .menu__item-list {
+        padding: 18px 12px;
+        width: 43px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+    .menu__item-list-open {
+        padding: 18px 19px;
+        width: 29px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .menu__item {
+        position: absolute;
+        content: '';
+        width: 42px;
+        height: 3px;
+        background: #000;
+    }
+    .menu__item-open {
+        position: absolute;
+        content: '';
+        margin-top: 13px;
+        width: 37px;
+        height: 3px;
+        background: #000;
+    }
+
+    .modal-window {
+        /*top: 300px;*/
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: none;
+        opacity: 0;
+        position: relative;
+    }
+
+    .website-modal {
+        height: 50%;
+        width: 100%;
+    }
+
+    .advertising-modal {
+        height: 50%;
+        width: 100%;
+    }
+
+    .modal__header {
+        display: none;
+    }
+
+    .modal-window {
+        max-width: 375px;
+        margin: 0 auto;
+    }
+
+    .modal__title {
+        width: 260px;
+        margin: 240px auto 0 auto;
+    }
+
+    .modal__title span {
+        font-size: 24px;
+    }
+
+    .modal__phone {
+        margin-top: 45px;
+    }
+
+    .modal__button {
+        margin-top: 45px;
+    }
+
+    .modal__button-btn {
+        font-size: 36px;
+    }
+
+}
 
