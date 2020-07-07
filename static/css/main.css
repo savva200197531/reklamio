@@ -452,7 +452,7 @@ h1, h3, a, span  {
     }
 
     .menu__item:nth-child(1) {
-        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .menu__item:nth-child(2) {
