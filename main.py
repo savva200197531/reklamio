@@ -30,10 +30,18 @@ def index():
         if response:
             if response.get('phone'):
                 message = f'''
-Заявка с сайта - ЖК Краснообский
+Заявка с сайта - Reclam.io
 Телефон: {response.get('phone')}
             '''
-
+            else:
+                message = f'''
+Заявка с сайта - {response.get('hc')}
+Тип кваритры: {response.get('q1')}
+Телефон: {response.get("phone")}
+Сколько комнат: {response.get("q2")}
+Ипотека: {response.get("q3")}
+Когда планируете покупку: {response.get("q4")}
+Имя: {response.get("name")}
                         '''
             send_message(CHAT_ID, message)
             return render_template('index.html')
