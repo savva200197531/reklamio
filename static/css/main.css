@@ -18,9 +18,10 @@ a {
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
-h1, h3, a, span  {
+h1, h3, a, span {
     font-style: normal;
     font-weight: 400;
     color: #fff;
@@ -64,8 +65,8 @@ h1, h3, a, span  {
 }
 
 .blur.website::before {
-    background: url('../assets/img/background-hand-blur.jpg')center center;
-    background-size: cover;
+    /*background: url('../assets/img/background-hand-blur.jpg') center center;*/
+    /*background-size: cover;*/
 }
 
 .advertising {
@@ -81,14 +82,17 @@ h1, h3, a, span  {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../assets/img/background-fruit.jpg')no-repeat center center;
+    background: url('../assets/img/background-fruit.jpg') no-repeat center center;
     background-size: cover;
     z-index: -1;
 }
 
-.blur.advertising::before {
-    background: url('../assets/img/background-fruit-blur.jpg')no-repeat center center;
-    background-size: cover;
+.blur.advertising::before,
+.blur.website::before {
+    /*background: url('../assets/img/background-fruit-blur.jpg') no-repeat center center;*/
+    /*background-size: cover;*/
+    transition: 0.4s;
+    filter: blur(5px) brightness(85%);
 }
 
 .website__header, .advertising__header {
@@ -106,7 +110,7 @@ h1, h3, a, span  {
     display: none;
 }
 
-.website__title, .advertising__title  {
+.website__title, .advertising__title {
     font-size: 48px;
     display: block;
     text-align: center;
@@ -158,7 +162,7 @@ h1, h3, a, span  {
 .menu-wrapper {
     position: absolute;
     bottom: 0;
-    left: calc(50% - 91px/2);
+    left: calc(50% - 91px / 2);
     z-index: 200;
 }
 
@@ -181,9 +185,7 @@ h1, h3, a, span  {
     padding: 28px 20px;
     width: 51px;
     height: 33px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: block;
     position: relative;
 }
 
@@ -195,12 +197,12 @@ h1, h3, a, span  {
     background: #000;
 }
 
-.menu__item:nth-child(1) {
-    margin-bottom: 29px;
+.menu__item:nth-child(2) {
+    margin-top: 15px;
 }
 
 .menu__item:nth-child(3) {
-    margin-top: 29px;
+    margin-top: 30px;
 }
 
 /*menu close*/
@@ -253,9 +255,10 @@ h1, h3, a, span  {
     height: 100%;
     width: 100%;
     text-align: center;
-    display: none;
     opacity: 0;
-    position: relative;
+    position: absolute;
+    top: 100vh;
+    transition: 0.8s;
 }
 
 .modal {
@@ -274,7 +277,7 @@ h1, h3, a, span  {
 }
 
 .advertising-modal {
-    background: url('../assets/img/background-fruit-blur.jpg')center center;
+    background: url('../assets/img/background-fruit-blur.jpg') center center;
     background-size: cover;
     height: 100%;
     width: 50%;
@@ -315,6 +318,26 @@ h1, h3, a, span  {
     border: 1px transparent;
 }
 
+input.modal__phone-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input.modal__phone-input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input.modal__phone-input::-moz-placeholder {
+    color: #ffffff;
+}
+
+input.modal__phone-input:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input.modal__phone-input:-ms-input-placeholder {
+    color: rgb(255, 255, 255);
+}
+
 .modal__button {
     margin-top: 50px;
 }
@@ -345,7 +368,7 @@ h1, h3, a, span  {
 
 @media (max-width: 850px) {
     .main-wrapper {
-        height: 668px;
+        /*height: 668px;*/
     }
 
     .container {
@@ -390,8 +413,7 @@ h1, h3, a, span  {
     }
 
 
-
-    .website__title, .advertising__title  {
+    .website__title, .advertising__title {
         font-size: 24px;
         display: block;
         text-align: center;
@@ -416,7 +438,7 @@ h1, h3, a, span  {
     }
 
     .menu-wrapper {
-        left: calc(50% - 67px/2);
+        left: calc(50% - 67px / 2);
     }
 
     .menu__item-list {
@@ -426,6 +448,7 @@ h1, h3, a, span  {
         display: block;
         position: relative;
     }
+
     .menu__item-list-open {
         padding: 18px 19px;
         width: 29px;
@@ -442,6 +465,7 @@ h1, h3, a, span  {
         height: 3px;
         background: #000;
     }
+
     .menu__item-open {
         position: absolute;
         content: '';
@@ -470,7 +494,7 @@ h1, h3, a, span  {
         text-align: center;
         display: none;
         opacity: 0;
-        position: relative;
+        /*position: relative;*/
     }
 
     .website-modal {

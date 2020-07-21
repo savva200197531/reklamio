@@ -12,7 +12,7 @@ const blurCheckerOver = event => {
   if (event.target.closest('.advertising')) {
     advertising.classList.add('blur')
     website.classList.remove('blur')
-    advertisingTitle.style.letterSpacing = '1px'
+    advertisingTitle.style = `transition: 0.4s; letter-spacing: 1px`
     websiteTitle.style.letterSpacing = '0'
   }
 
@@ -20,7 +20,7 @@ const blurCheckerOver = event => {
     advertising.classList.remove('blur')
     website.classList.add('blur')
     advertisingTitle.style.letterSpacing = '0'
-    websiteTitle.style.letterSpacing = '1px'
+    websiteTitle.style = `transition: 0.4s; letter-spacing: 1px`
   }
 }
 
@@ -39,8 +39,9 @@ const modalOpen = () => {
   menu.style.zIndex = '-1'
   menuOpen.style.zIndex = '200'
   modal.style.display = 'block'
-  modal.style.opacity = '1'
-  container.style.display = 'none'
+  modal.style = `opacity: 1; display: block; top: 0px;`;
+  // container.style.display = 'none'
+
 }
 
 const modalClose = () => {
@@ -50,7 +51,8 @@ const modalClose = () => {
   menuOpen.style.zIndex = '-1'
   modal.style.display = 'none'
   modal.style.opacity = '0'
-  container.style.display = 'flex'
+  modal.style = `opacity: 0; display: block; top: 100%;`;
+  // container.style.display = 'flex'
 }
 
 const menuToggleCheck = event => {
