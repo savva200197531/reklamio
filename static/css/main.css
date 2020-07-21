@@ -258,8 +258,13 @@ h1, h3, a, span {
     opacity: 0;
     position: absolute;
     top: 100vh;
-    transition: 0.8s;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    /*-o-transition: 1s;*/
 }
+
+
 
 .modal {
     position: absolute;

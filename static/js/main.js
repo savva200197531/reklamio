@@ -38,10 +38,7 @@ const modalOpen = () => {
   menuOpen.classList.toggle('hide')
   menu.style.zIndex = '-1'
   menuOpen.style.zIndex = '200'
-  modal.style.display = 'block'
   modal.style = `opacity: 1; display: block; top: 0px;`;
-  // container.style.display = 'none'
-
 }
 
 const modalClose = () => {
@@ -49,10 +46,7 @@ const modalClose = () => {
   menu.classList.toggle('hide')
   menu.style.zIndex = '200'
   menuOpen.style.zIndex = '-1'
-  modal.style.display = 'none'
-  modal.style.opacity = '0'
   modal.style = `opacity: 0; display: block; top: 100%;`;
-  // container.style.display = 'flex'
 }
 
 const menuToggleCheck = event => {
